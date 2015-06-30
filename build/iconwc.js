@@ -52,9 +52,13 @@ Object.defineProperty(exports, "__esModule", {
 },{"./src":2,"document-register-element":3}],2:[function(require,module,exports){
 "use strict";
 
+/*
+ * Check if this browser support SVG and createDocument()
+ */
 var supportsSVG = function supportsSVG() {
-    return false;
-    return document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#BasicStructure", "1.1");
+    // if it doesn't support createDocument()
+    // it must be IE 8, this dude doesnt support SVG anyway
+    return document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#BasicStructure", "1.1") && document.implementation.createDocument;
 };
 
 /*
@@ -88,6 +92,7 @@ var makeAjaxRequest = function makeAjaxRequest(file, cb) {
  * @param content -  String
  */
 var createDoc = function createDoc(content) {
+
     var srcDoc = document.implementation.createDocument("http://www.w3.org/1999/xhtml", "html", null);
 
     var body = document.createElementNS("http://www.w3.org/1999/xhtml", "body");

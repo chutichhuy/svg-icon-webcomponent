@@ -1,7 +1,12 @@
 
+/*
+ * Check if this browser support SVG and createDocument()
+ */
 var supportsSVG = function () {
-    return false;
-    return document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#BasicStructure", "1.1");
+    // if it doesn't support createDocument()
+    // it must be IE 8, this dude doesnt support SVG anyway
+    return document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#BasicStructure", "1.1") &&
+        document.implementation.createDocument;
 };
 
 /*
@@ -35,7 +40,8 @@ var makeAjaxRequest = function (file, cb) {
  * Create an alternative document object
  * @param content -  String
  */
-var createDoc = function (content) {
+var createDoc = function (content) { 
+
     let srcDoc = document.implementation.createDocument(
         'http://www.w3.org/1999/xhtml', 
         'html', 

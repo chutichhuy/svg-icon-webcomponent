@@ -1,0 +1,32 @@
+{
+  "name": "icon-webcomponent",
+  "version": "0.0.1",
+  "description": "Web component for SVG icons",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frexy/svg-icon-webcomponent.git"
+  },
+  "keywords": [
+    "svg",
+    "icon",
+    "web",
+    "component"
+  ],
+  "author": "Huy Nguyen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frexy/svg-icon-webcomponent/issues"
+  },
+  "homepage": "https://github.com/frexy/svg-icon-webcomponent",
+  "dependencies": {
+    "document-register-element": "^0.4.3"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-exec": "^0.4.6"
+  }
+}

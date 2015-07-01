@@ -72,7 +72,7 @@ npm install icon-webcomponent
 Then use it in your own code
 
 ```javascript
-var wc = require("icon-component");
+var wc = require("icon-webcomponent");
 
 var fn = wc("your-tagname");
 fn();

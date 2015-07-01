@@ -1,8 +1,8 @@
 {
   "name": "icon-webcomponent",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "Web component for SVG icons",
-  "main": "main.js",
+  "main": "./lib/icon.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

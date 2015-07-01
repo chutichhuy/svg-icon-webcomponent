@@ -24,6 +24,9 @@ Then you can use the tag ```svg-icon``` in your HTML.
     <src href="sprite.svg#cow" /> <!-- sprite SVG is good to go -->
 </svg-icon>
 ```
+## Browser support
+Works fine with IE9, latest Chrome, Safari and Firefox Nightly.
+There's no SVG support on IE 8, so you need to declare a ```<src>``` element which points to a PNG file as a fallback.
 
 ## Custom tag name
 

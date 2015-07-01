@@ -34,15 +34,11 @@ let elementProto = Object.create(
 );
 
 // the register event stuff
-let makeRegisterFn = function (tag = "svg-icon") {
+export default function (tag = "svg-icon") {
     return function () {
         return document.registerElement(tag, {
             prototype: elementProto
         });
     };
 };
-
-//
-makeRegisterFn()();
-export {makeRegisterFn};
 

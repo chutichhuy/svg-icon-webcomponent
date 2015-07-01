@@ -62,10 +62,10 @@ var createDoc = function (content) {
  * @param cb - function
  */
 var loadSrc = function (file, cb) {
-    return _srcCache[file] ? cb(_srcCache[file]) : makeAjaxRequest(file, function (content) {
+    return _srcCache[file] ? cb(createDoc(_srcCache[file])) : makeAjaxRequest(file, function (content) {
         if (content) {
             let doc = createDoc(content);
-            _srcCache[file] = doc;
+            _srcCache[file] = content;
             cb(doc);
         } else {
             cb(null);

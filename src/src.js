@@ -41,17 +41,17 @@ var makeAjaxRequest = function (file, cb) {
  * @param content -  String
  */
 var createDoc = function (content) { 
-
-    let srcDoc = document.implementation.createDocument(
+    let srcDoc = document.implementation.createHTMLDocument(
         'http://www.w3.org/1999/xhtml', 
         'html', 
         null
     );
     
-    var body = document.createElementNS('http://www.w3.org/1999/xhtml', 'body');
-    body.innerHTML = content;
+    var body        = srcDoc.createElement("body");
+    body.innerHTML  = content;
+
     srcDoc.documentElement.appendChild(body);
-    return srcDoc.documentElement;
+    return srcDoc;
 };
 
 
@@ -74,12 +74,30 @@ var loadSrc = function (file, cb) {
 };
 
 /*
+ * Recursively import nodes from an element to another
+ * This exists because IE9 and below doesnt support innerHTML on SVGElement
+ */
+var importNodes = function (orig, dest) {
+    for (let i = 0; i < orig.childNodes.length; i++) {  
+        dest.appendChild(
+            importNodes(
+                orig.childNodes[i], 
+                dest.ownerDocument.importNode(orig.childNodes[i])
+            )
+        );
+    };
+    return dest;
+};
+
+/*
  * Create a SVG element
  * @param element - the original SVG element
  */
 var createSvgElement = function (element) {
-    let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    svg.innerHTML = element.innerHTML;
+    let svg = importNodes(
+        element, 
+        document.createElementNS("http://www.w3.org/2000/svg", "svg")
+    ); 
     
     // assign viewBox
     if (element.getAttribute("viewBox")) {

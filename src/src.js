@@ -62,10 +62,10 @@ var createDoc = function (content) {
  * @param cb - function
  */
 var loadSrc = function (file, cb) {
-    return _srcCache[file] ? cb(createDoc(_srcCache[file])) : makeAjaxRequest(file, function (content) {
+    return _srcCache[file] ? cb(_srcCache[file]) : makeAjaxRequest(file, function (content) {
         if (content) {
             let doc = createDoc(content);
-            _srcCache[file] = content;
+            _srcCache[file] = doc;
             cb(doc);
         } else {
             cb(null);
@@ -80,7 +80,7 @@ var loadSrc = function (file, cb) {
 var importNodes = function (orig, dest) {
     for (let i = 0; i < orig.childNodes.length; i++) {  
         dest.appendChild(
-            dest.ownerDocument.importNode(orig.childNodes[i], true) 
+            orig.childNodes[i].cloneNode(true) 
         );
     };
     return dest;

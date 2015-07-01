@@ -79,12 +79,14 @@ var loadSrc = function (file, cb) {
  */
 var createSvgElement = function (element) {
     let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-   
     svg.innerHTML = element.innerHTML;
+    
+    // assign viewBox
     if (element.getAttribute("viewBox")) {
         svg.setAttribute("viewBox", element.getAttribute("viewBox"));
     }
-
+    
+    // namespace and stuff
     svg.setAttribute("xmlns", 
         element.getAttribute("xmlns") ? 
             element.getAttribute("xmlns") : 
@@ -136,10 +138,9 @@ export default function (srcs, callback) {
                         // check if the anchor matches any element in the document
                         // if not, then move on
                         if (anchor) {
-                            ele = doc.querySelector("#" + anchor);
+                            ele = doc.getElementById(anchor);
                             
                             if (!ele) {
-                                console.log("move on");
                                 return innerPicker(nex);
                             }
                         }
@@ -148,7 +149,7 @@ export default function (srcs, callback) {
                             createSvgElement(
                                 anchor                      ? 
                                 ele                         : 
-                                doc.querySelector("svg")
+                                doc.getElementsByTagName("svg")[0]
                             )
                         );
                     }
@@ -168,7 +169,8 @@ export default function (srcs, callback) {
             return;
         }
     };
-
+    
+    // start the loop
     innerPicker(0);
 };
 

@@ -24,8 +24,12 @@ var elementProto = Object.create(HTMLElement.prototype, {
                 pickASrc(Array.prototype.slice.call(srcs).map(function (s) {
                     return s.getAttribute("href");
                 }), function (content) {
-                    _this.innerHTML = "";
-                    _this.appendChild(content);
+                    // check for shadow DOM
+                    if (false && _this.createShadowRoot) {
+                        _this.createShadowRoot().appendChild(content);
+                    } else {
+                        _this.appendChild(content);
+                    }
                 });
             }
         }
@@ -125,12 +129,14 @@ var loadSrc = function loadSrc(file, cb) {
  */
 var createSvgElement = function createSvgElement(element) {
     var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-
     svg.innerHTML = element.innerHTML;
+
+    // assign viewBox
     if (element.getAttribute("viewBox")) {
         svg.setAttribute("viewBox", element.getAttribute("viewBox"));
     }
 
+    // namespace and stuff
     svg.setAttribute("xmlns", element.getAttribute("xmlns") ? element.getAttribute("xmlns") : "http://www.w3.org/2000/svg");
 
     svg.setAttribute("version", element.getAttribute("version") ? element.getAttribute("version") : "1.1");
@@ -186,15 +192,14 @@ module.exports = function (srcs, callback) {
                                 // check if the anchor matches any element in the document
                                 // if not, then move on
                                 if (anchor) {
-                                    ele = doc.querySelector("#" + anchor);
+                                    ele = doc.getElementById(anchor);
 
                                     if (!ele) {
-                                        console.log("move on");
                                         return innerPicker(nex);
                                     }
                                 }
 
-                                return callback(createSvgElement(anchor ? ele : doc.querySelector("svg")));
+                                return callback(createSvgElement(anchor ? ele : doc.getElementsByTagName("svg")[0]));
                             }
                             return innerPicker(nex);
                         })
@@ -217,6 +222,7 @@ module.exports = function (srcs, callback) {
         }
     });
 
+    // start the loop
     innerPicker(0);
 };
 },{}],3:[function(require,module,exports){

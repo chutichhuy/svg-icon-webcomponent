@@ -19,8 +19,12 @@ let elementProto = Object.create(
                         }),
 
                         (content) => {
-                            this.innerHTML = "";
-                            this.appendChild(content);
+                            // check for shadow DOM
+                            if (false && this.createShadowRoot) {
+                                this.createShadowRoot().appendChild(content);
+                            } else {
+                                this.appendChild(content);
+                            }
                         }
                     );
                 }

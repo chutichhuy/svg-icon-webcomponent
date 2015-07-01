@@ -80,10 +80,7 @@ var loadSrc = function (file, cb) {
 var importNodes = function (orig, dest) {
     for (let i = 0; i < orig.childNodes.length; i++) {  
         dest.appendChild(
-            importNodes(
-                orig.childNodes[i], 
-                dest.ownerDocument.importNode(orig.childNodes[i])
-            )
+            dest.ownerDocument.importNode(orig.childNodes[i], true) 
         );
     };
     return dest;

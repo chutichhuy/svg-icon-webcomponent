@@ -12,4 +12,33 @@
             c-0.009-0.518-0.027-1.028-0.074-1.523c0.51-0.091,0.626-0.205,1.247-0.205C57.066,15.92,62,8.651,62,8.651L62,8.651z" class="si-harmony-cow-head si-harmony-cow-thick si-harmony-cow-thick-stroke si-harmony-cow-stroke si-harmony-stroke si-harmony-thick-stroke si-harmony-main si-harmony-fill si-harmony-main-fill"></path><path stroke-width="1" fill="none" stroke="rgb(53, 159, 166)" stroke-linejoin="round" d="M11,28.562
             c0,0,7-6.056,20-0.923c12.938-5.133,20,0.923,20,0.923" class="si-harmony-cow-line si-harmony-cow-thin si-harmony-cow-thin-stroke si-harmony-cow-stroke si-harmony-stroke si-harmony-thin-stroke"></path><circle stroke-width="1" fill="none" stroke="rgb(53, 159, 166)" stroke-linejoin="round" cx="19.583" cy="34.583" r="3.583" class="si-harmony-cow-nose si-harmony-cow-thin si-harmony-cow-thin-stroke si-harmony-cow-stroke si-harmony-stroke si-harmony-thin-stroke"></circle><circle stroke-width="1" fill="none" stroke="rgb(53, 159, 166)" stroke-linejoin="round" cx="41.583" cy="34.583" r="3.583" class="si-harmony-cow-nose si-harmony-cow-thin si-harmony-cow-thin-stroke si-harmony-cow-stroke si-harmony-stroke si-harmony-thin-stroke"></circle><ellipse fill="rgb(53, 159, 166)" cx="21.417" cy="17.375" rx="2.417" ry="2.375" class="si-harmony-cow-eyes si-harmony-cow-fill si-harmony-fill si-harmony-inner-fill si-harmony-inner-fill si-harmony-inner-fill si-harmony-inner-fill si-harmony-inner-fill si-harmony-inner-fill si-harmony-inner-fill si-harmony-inner-fill"></ellipse><ellipse fill="rgb(53, 159, 166)" cx="40.417" cy="17.375" rx="2.417" ry="2.375" class="si-harmony-cow-eyes si-harmony-cow-fill si-harmony-fill si-harmony-inner-fill si-harmony-inner-fill si-harmony-inner-fill si-harmony-inner-fill si-harmony-inner-fill si-harmony-inner-fill si-harmony-inner-fill si-harmony-inner-fill"></ellipse></g></g>
     </symbol>
+
+<symbol id="oxygen" viewBox="0 0 56 65">
+    <!-- Generator: Sketch 3.0.3 (7891) - http://www.bohemiancoding.com/sketch -->
+    <title class="">Oxygen</title>
+    
+    <defs class=""></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" class="">
+        <g id="Oxygen" transform="translate(1.000000, 1.000000)" stroke="#6B6C6E" stroke-width="2" class="">
+            <path d="M11,11.3 L11,6.5 L7,6.5 L7,11.3 C3,12.1 0.1,15.5 0.1,19.6 L0.1,58 C0.1,62.7 4,62.1 8.8,62.1 L9.3,62.1 C14.1,62.1 18,62.7 18,58 L18,19.6 C17.9,15.4 14.9,12.1 11,11.3 L11,11.3 Z" id="Shape" class="si-outline-oxygen-tank si-outline-oxygen-stroke si-outline-stroke" style=""></path>
+            <path d="M0.9,26 L16.9,26" id="Shape" class="si-outline-oxygen-strap si-outline-oxygen-stroke si-outline-stroke" style=""></path>
+            <path d="M0.9,48 L16.9,48" id="Shape" class="si-outline-oxygen-strap si-outline-oxygen-stroke si-outline-stroke" style=""></path>
+            <path d="M35.1,11.3 L35.1,6.5 L31,6.5 L31,11.3 C27,12.1 24,15.5 24,19.6 L24,58 C24,62.7 28,62.1 32.8,62.1 L33.3,62.1 C38.2,62.1 42.1,62.7 42.1,58 L42.1,19.6 C42.1,15.4 39.1,12.1 35.1,11.3 L35.1,11.3 Z" id="Shape" class="si-outline-oxygen-tank si-outline-oxygen-stroke si-outline-stroke" style=""></path>
+            <path d="M24.1,26 L41.6,26" id="Shape" class="si-outline-oxygen-strap si-outline-oxygen-stroke si-outline-stroke" style=""></path>
+            <path d="M24.1,48 L41.6,48" id="Shape" class="si-outline-oxygen-strap si-outline-oxygen-stroke si-outline-stroke" style=""></path>
+            <rect id="Rectangle-path" x="4" y="3" width="34.1" height="3" class="si-outline-oxygen-flow-adjustment-control si-outline-oxygen-stroke si-outline-stroke" style=""></rect>
+            <rect id="Rectangle-path" x="18" y="24" width="6" height="5.1" class="si-outline-oxygen-lock si-outline-oxygen-stroke si-outline-stroke" style=""></rect>
+            <rect id="Rectangle-path" x="18" y="47" width="6" height="5.1" class="si-outline-oxygen-lock si-outline-oxygen-stroke si-outline-stroke" style=""></rect>
+            <path d="M7,0 L10.9,0" id="Shape" class="si-outline-oxygen-valve si-outline-oxygen-stroke si-outline-stroke" style=""></path>
+            <path d="M31,0 L35,0" id="Shape" class="si-outline-oxygen-valve si-outline-oxygen-stroke si-outline-stroke" style=""></path>
+            <path d="M8.9,0 L8.9,3" id="Shape" class="si-outline-oxygen-valve si-outline-oxygen-stroke si-outline-stroke" style=""></path>
+            <path d="M33,0 L33,3" id="Shape" class="si-outline-oxygen-valve si-outline-oxygen-stroke si-outline-stroke" style=""></path>
+            <path d="M36,8.1 C36,8.1 51,6.5 51,24.8" id="Shape" class="si-outline-oxygen-hose si-outline-oxygen-stroke si-outline-stroke" style=""></path>
+            <circle id="Oval" cx="51" cy="28" r="3" class="si-outline-oxygen-mouthpiece si-outline-oxygen-stroke si-outline-stroke" style=""></circle>
+            <path d="M51,30.9 L51,35" id="Shape" class="si-outline-oxygen-mouthpiece si-outline-oxygen-stroke si-outline-stroke" style=""></path>
+            <path d="M49,35 L53,35" id="Shape" class="si-outline-oxygen-mouthpiece si-outline-oxygen-stroke si-outline-stroke" style=""></path>
+        </g>
+    </g>
+</symbol>
+
 </svg>

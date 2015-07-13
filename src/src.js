@@ -14,6 +14,8 @@ var supportsSVG = function () {
  */
 let _srcCache = {};
 
+let _loadingCallback = {};
+
 /*
  * Load 
  */
@@ -62,15 +64,33 @@ var createDoc = function (content) {
  * @param cb - function
  */
 var loadSrc = function (file, cb) {
-    return _srcCache[file] ? cb(_srcCache[file]) : makeAjaxRequest(file, function (content) {
-        if (content) {
-            let doc = createDoc(content);
-            _srcCache[file] = doc;
+    
+    var callCallback = function (doc) {
+        var cb;
+        while (cb = _loadingCallback[file].shift()) {
             cb(doc);
-        } else {
-            cb(null);
         }
-    }); 
+    };
+
+    var doLoad = function () {
+        if (!_loadingCallback[file]) {
+            _loadingCallback[file] = [];
+
+            makeAjaxRequest(file, function (content) {
+                if (content) {
+                    let doc = createDoc(content);
+                    _srcCache[file] = doc;
+                    callCallback(doc);
+                } else {
+                    callCallback(null);
+                }
+            });
+        }
+        
+        _loadingCallback[file].push(cb); 
+    };
+
+    return _srcCache[file] ? cb(_srcCache[file]) : doLoad(); 
 };
 
 /*

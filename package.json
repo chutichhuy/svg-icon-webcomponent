@@ -1,6 +1,6 @@
 {
   "name": "icon-webcomponent",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Web component for SVG icons",
   "main": "./lib/icon.js",
   "scripts": {

@@ -20,7 +20,7 @@ let elementProto = Object.create(
 
                         (content) => {
                             // check for shadow DOM
-                            if (false && this.createShadowRoot) {
+                            if (this.createShadowRoot) {
                                 this.createShadowRoot().appendChild(content);
                             } else {
                                 this.appendChild(content);

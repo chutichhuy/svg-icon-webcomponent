@@ -2,24 +2,39 @@
     <head>
         <title>Icon Web Component Test</title>
         <script src="../build/iconwc.js"></script>
+        
+        <style>
+svg-icon.cow1 , svg-icon.cow2 {
+    width: 32px;
+        height: 32px;
+}
+            svg-icon.cow1 * {
+                stroke: red;
+            }
+
+            svg-icon.cow2 * {
+                stroke: blue;
+            }
+
+        </style>
     </head>
     <body>
         <!-- change urls to test URL fallback  -->
-        <svg-icon>
+        <svg-icon class="cow1">
             <src href="./images/cow.svg">
             <src href="./images/sprite.svg#cow">
             <src href="./images/cow.png">
             <src href="./images/cow-pink.png">
         </svg-icon>
 
-        <svg-icon>
+        <svg-icon class="cow2">
             <src href="./images/cow.svg">
             <src href="./images/sprite.svg#cow">
             <src href="./images/cow.png">
             <src href="./images/cow-pink.png">
         </svg-icon>
 
-        <svg-icon>
+        <svg-icon class="cow3">
             <src href="./images/sprite.svg#oxygen">
         </svg-icon>
     </body>

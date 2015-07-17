@@ -4,7 +4,7 @@ import * as registerElement from "document-register-element";
 /*
  * The prototype
  */
-let elementProto = Object.create(
+var elementProto = Object.create(
     HTMLElement.prototype, 
     {
         createdCallback: {
@@ -21,7 +21,8 @@ let elementProto = Object.create(
                         (content) => {
                             // check for shadow DOM
                             if (false && this.createShadowRoot) {
-                                this.createShadowRoot().appendChild(content);
+                                let sr = this.createShadowRoot();
+                                sr.appendChild(content);
                             } else {
                                 this.appendChild(content);
                             }
